@@ -58,19 +58,24 @@ console.log(shallowItemsDifferExcept(a, b, ['showing',]))
 All together in one `shouldComponentUpdate`:
 
 ```javascript
-shouldComponentUpdate(nextProps, nextState) {
-  if (!shallowEqual(this.props.arrayOfStuff, nextProps.arrayOfStuff)) {
-    // console.log('arrayOfStuff changed')
-    return true
-  }
+import React from 'react'
+import { shallowEqual, shallowEqualExcept, shallowItemsDifferExcept } from 'shallow-utils'
 
-  let checkedProps = [
-    'arrayOfStuff',
-  ]
-  if (!shallowEqualExcept(this.props, nextProps, checkedProps)) {
-    // console.log('misc props changed', shallowItemsDifferExcept(this.props, nextProps, checkedProps))
-    return true
+class Example extends React.Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    if (!shallowEqual(this.props.arrayOfStuff, nextProps.arrayOfStuff)) {
+      // console.log('arrayOfStuff changed')
+      return true
+    }
+
+    let checkedProps = [
+      'arrayOfStuff',
+    ]
+    if (!shallowEqualExcept(this.props, nextProps, checkedProps)) {
+      // console.log('misc props changed', shallowItemsDifferExcept(this.props, nextProps, checkedProps))
+      return true
+    }
+    return false
   }
-  return false
 }
 ```
