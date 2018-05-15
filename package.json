@@ -1,0 +1,49 @@
+{
+  "name": "shallow-utils",
+  "version": "1.0.0",
+  "description": "Utilities for shallow comparisons, particularly for React optimisation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/webpack/bin/webpack.js",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uptick/shallow-utils.git"
+  },
+  "keywords": [
+    "shallow",
+    "compare",
+    "comparison",
+    "utilities",
+    "utils",
+    "utility",
+    "util",
+    "shouldComponentUpdate",
+    "should",
+    "update",
+    "react",
+    "optimisation"
+  ],
+  "author": "Uptick Pty Ltd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uptick/shallow-utils/issues"
+  },
+  "homepage": "https://github.com/uptick/shallow-utils#readme",
+  "dependencies": {
+    "shallow-equal": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
